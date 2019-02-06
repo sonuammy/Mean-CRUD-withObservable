@@ -10,6 +10,8 @@ import{Router}  from '@angular/router';
 })
 export class ListuserComponent implements OnInit {
   private users:User[];
+  msg: string;
+  mycolor: string;
   constructor(private _userService:UserService, private _router:Router) { }
 
   ngOnInit() {
@@ -23,21 +25,25 @@ export class ListuserComponent implements OnInit {
   deleteUser(user){
     this._userService.deleteUser(user._id).subscribe((data)=>{
         this.users.splice(this.users.indexOf(user),1);
+        this.msg = "Succesfully deleted";
+        this.mycolor = "green";
     },(error)=>{
       console.log(error);
+      this.msg = "Not succesfully deleted";
+      this.mycolor = "red";
     });
   }
 
    updateUser(user){  
      this._userService.setter(user);
-     this._router.navigate(['/op']);
+     this._router.navigate(['/update']);
 
 
    }
    newUser(){
    let user = new User();
     this._userService.setter(user);
-     this._router.navigate(['/op']);
+     this._router.navigate(['/update']);
    
    }
 

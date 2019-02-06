@@ -1,5 +1,4 @@
 <div class="container">
-
     <table class="table table-striped">
         <thead>
             <th>Name</th>
@@ -15,9 +14,9 @@
                 <td>{{user.salary}}</td>
                 <td><button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
                     <button class="btn btn-primary" (click)="updateUser(user)">Edit</button></td>
-
             </tr>
         </tbody>
     </table>
     <button class="btn btn-primary" (click)="newUser()">New User</button>
+    <div [style.color]='mycolor'>{{msg}}</div>
 </div>

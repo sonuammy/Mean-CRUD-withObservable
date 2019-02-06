@@ -9,7 +9,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import{UserService}   from './shared-service/user.service';
 const appRoutes:Routes=[
   {path:'', component:ListuserComponent},
-    {path:'op', component:UserFormComponent}
+    {path:'update', component:UserFormComponent}
 ];
 
 @NgModule({
